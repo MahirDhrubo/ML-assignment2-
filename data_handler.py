@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import random
 
 
 def load_dataset():
@@ -53,7 +54,15 @@ def bagging_sampler(X, y):
     :return:
     """
     # todo: implement
-    X_sample, y_sample = None, None
+    sample_size = X.shape[1]
+    X_sample = np.empty(X.shape, dtype=int)
+    y_sample = np.empty(y.shape, dtype=int)
+    
+    for i in range(sample_size):
+        idx = random.randint(0, sample_size-1)
+        X_sample[:, i] = X[:, idx]
+        y_sample[:, i] = y[:, idx]
+
     assert X_sample.shape == X.shape
     assert y_sample.shape == y.shape
     return X_sample, y_sample

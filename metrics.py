@@ -60,4 +60,7 @@ def f1_score(y_true, y_pred):
     :return:
     """
     # todo: implement
-    return None
+
+    precision = precision_score(y_true, y_pred)
+    recall = recall_score(y_true, y_pred)
+    return 2 * precision *recall / (precision + recall)

@@ -37,4 +37,4 @@ if __name__ == '__main__':
     print('Accuracy ', accuracy(y_true=y_test, y_pred=y_pred))
     print('Recall score ', recall_score(y_true=y_test, y_pred=y_pred))
     print('Precision score ', precision_score(y_true=y_test, y_pred=y_pred))
-    # print('F1 score ', f1_score(y_true=y_test, y_pred=y_pred))
+    print('F1 score ', f1_score(y_true=y_test, y_pred=y_pred))

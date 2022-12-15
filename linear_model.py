@@ -33,7 +33,7 @@ class LogisticRegression:
         self.weight = np.zeros((evidence_size, 1))
 
         # print(X.shape)
-        print(self.weight.shape)
+        # print(self.weight.shape)
         # print(X.T.shape)
         # print(y.shape)
 
@@ -53,8 +53,8 @@ class LogisticRegression:
             self.weight = self.weight - self.learning_rate * dWeight.T
             self.cons = self.cons - self.learning_rate * dCons
 
-            if i%(self.iteration / 10) == 0:
-                print('cost after iteration ', i, ':', cost)
+            # if i%(self.iteration / 10) == 0:
+            #     print('cost after iteration ', i, ':', cost)
 
     def predict(self, X):
         """
@@ -68,6 +68,7 @@ class LogisticRegression:
         p = sigmoid(y_pred)
         p = p >= 0.5
         p = np.array(p, dtype=int)
+        # shape of 'p' is (1 x test_size)
 
         return p
 
